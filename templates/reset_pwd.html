@@ -1,7 +1,12 @@
 {% extends "topic/base.html" %}
 {% block title %}论坛主页{% endblock %}
 {% block main %}
-
+<div><br>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
 <form action="{{ url_for('reset.reset_update') }}" method="POST">
     <input type="text" name="password">
     <input type="text" name="token" value="{{ token }}" style="display:None">
