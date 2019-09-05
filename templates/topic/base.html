@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/mdui/0.4.3/css/mdui.min.css">
+<head>
+<body>
+<div class="mdui-appbar mdui-appbar-fixed .mdui-appbar-scroll-hide">
+  <div class="mdui-toolbar mdui-color-cyan-800">
+    <a href="{{ url_for('topic.index') }}" class="mdui-btn mdui-ripple" style="font-size: 19px;">首页</a>
+    <div class="mdui-toolbar-spacer"></div>
+      <a href="{{ url_for("index.profile") }}" class="mdui-btn mdui-ripple" style="font-size: 19px;">个人主页</a>
+    <a href="{{ url_for('index.setting') }}" class="mdui-btn mdui-ripple" style="font-size: 19px;">用户设置</a>
+    <a href="{{ url_for('mail.index') }}" class="mdui-btn mdui-ripple" style="font-size: 19px;">站内信</a>
+    <a href='{{ url_for('index.register_view') }}' class="mdui-btn mdui-ripple" style="font-size: 19px;">注册</a>
+    <a href='{{ url_for('index.index') }}' class="mdui-btn mdui-ripple" style="font-size: 19px;">登录</a>
+
+  </div>
+</div>
+
+{#<!-- navbar -->#}
+{#<div class='navbar'>#}
+{#  <div class='navbar-inner'>#}
+{#    <div class='container'>#}
+{#      <ul class='nav pull-right'>#}
+{#        <li><a href='{{ url_for('topic.index') }}'>首页</a></li>#}
+{##}
+{#        <li><a href='{{ url_for('index.setting') }}'>个人设置</a></li>#}
+{#        <li><a href='/api'>API</a></li>#}
+{##}
+{#        <li><a href="/about" target="">关于</a></li>#}
+{##}
+{##}
+{#        <li><a href='{{ url_for('index.index') }}'>注册</a></li>#}
+{#        <li><a href='{{ url_for('index.index') }}'>登录</a></li>#}
+{##}
+{#      </ul>#}
+{#      <a class="btn btn-navbar" id="responsive-sidebar-trigger">#}
+{#        <span class="icon-bar"></span>#}
+{#        <span class="icon-bar"></span>#}
+{#        <span class="icon-bar"></span>#}
+{#      </a>#}
+{#    </div>#}
+{#  </div>#}
+{#</div>#}
+<script src="//cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script>
+{% block main %}
+{% endblock %}
+
+
+</body>

@@ -1,0 +1,120 @@
+{% extends "topic/base.html" %}
+{% block title %}论坛主页{% endblock %}
+{% block main %}
+<div id="main">
+
+
+    <div id="content">
+        <div class="panel">
+            <div class="header">
+                <ul class="breadcrumb">
+                    <li><a href="{{ url_for('topic.index') }}">主页</a><span class="divider">/</span></li>
+                </ul>
+            </div>
+            <div class="inner userinfo">
+                <div class="user_big_avatar">
+                    <img src={{ user.image }} class="user_avatar"
+                         title="{{ user.username }}">
+                </div>
+                <a class="dark">{{ user.username }}</a>
+
+                <p class="col_fade">{{ user.created_time | format_time}}</p>
+
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="header">
+                <span class="col_fade">最近创建的话题</span>
+            </div>
+
+            {% for t in topics %}
+                <div class="cell">
+
+                    <a class="user_avatar pull-left" href="{{ url_for('index.user_index', name=t.user().username) }}">
+                        <img src="{{ t.user().image }}" title="{{ t.user_id }}">
+                    </a>
+
+                    <span class="reply_count pull-left">
+                    <span class="count_of_replies" title="回复数">
+                      {{ t.replies() | count }}
+                    </span>
+                    <span class="count_seperator">/</span>
+                    <span class="count_of_visits" title="点击数">
+                      {{ t.views }}
+                    </span>
+                  </span>
+                    <a class="last_time pull-right"
+                       href="">
+                        <img class="user_small_avatar" src="{{ url_for('static', filename='img/fan.jpg') }}">
+                        <span class="last_active_time">{{ t.created_time | format_time}}</span>
+                    </a>
+
+
+                    <div class="topic_title_wrapper">
+
+
+                        <a class="topic_title" href="{{ url_for('topic.detail', id=t.id) }}" title="{{ t.title }}">
+                            {{ t.title }}
+                        </a>
+                    </div>
+                </div>
+
+            {% endfor %}
+
+
+        </div>
+
+
+        <div class="panel">
+            <div class="header">
+                <span class="col_fade">最近参与的话题</span>
+            </div>
+            <div>
+                {% for r in rtopics %}
+                    <div class="cell">
+
+                        <a class="user_avatar pull-left" href="{{ url_for('index.user_index', name=r.user().username) }}">
+                            <img src="{{ r.user().image }}" title="{{ r.user_id }}">
+                        </a>
+
+                        <span class="reply_count pull-left">
+                        <span class="count_of_replies" title="回复数">
+                          {{ r.replies() | count }}
+                        </span>
+                        <span class="count_seperator">/</span>
+                        <span class="count_of_visits" title="点击数">
+                          {{ r.views }}
+                        </span>
+                      </span>
+                        <a class="last_time pull-right"
+                           href="https://cnodejs.org/topic/5cc7a5b105ae566f637fdb7c#5cc7ae24a86ae80ce64b5917">
+                            <img class="user_small_avatar" src="{{ url_for('static', filename='img/fan.jpg') }}">
+                            <span class="last_active_time">{{ r.created_time | format_time}}</span>
+                        </a>
+
+
+                        <div class="topic_title_wrapper">
+
+
+                            <a class="topic_title" href="{{ url_for('topic.detail', id=r.id) }}"
+                               title="{{ r.title }}">
+                                {{ r.title }}
+                            </a>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+{% endblock %}

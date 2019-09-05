@@ -1,0 +1,145 @@
+{% extends "topic/base.html" %}
+{% block title %}论坛主页{% endblock %}
+{% block main %}
+    <!-- navbar -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="https://www.rieruuuu.xyz/">
+                    <img src="../../邮箱_files/brand.png">
+                </a>
+                <ul class="nav pull-right">
+                    <li><a href="https://www.rieruuuu.xyz/"><i class="fa fa-home" style="color: white"></i> 首页</a></li>
+
+                    <li><a href="https://www.rieruuuu.xyz/profile"><i class="fa fa-address-card"
+                                                                      style="color: white"></i> 个人主页</a></li>
+
+
+                    <li><a href="https://www.rieruuuu.xyz/setting/" target=""><i class="fa fa-gears"
+                                                                                 style="color: white"></i> 用户设置</a></li>
+                    <li><a href="https://www.rieruuuu.xyz/mail/"><i class="fa fa-inbox" style="color: white"></i>
+                        站内信</a></li>
+
+                    <li><a href="https://www.rieruuuu.xyz/register/view"><i class="fa fa-coffee"
+                                                                            style="color: white"></i> 注册</a></li>
+                    <li><a href="https://www.rieruuuu.xyz/login/view"><i class="fa fa-user" style="color: white"></i> 登录</a>
+                    </li>
+
+                </ul>
+                <a class="btn btn-navbar" id="responsive-sidebar-trigger">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="main">
+        <div id="sidebar">
+
+            <div class="panel">
+                <div class="header">
+                    <span class="col_fade">个人信息</span>
+                </div>
+                <div class="inner">
+                    <div class="user_card">
+
+                        <a class="user_avatar" href="{{ url_for("index.profile") }}">
+                            <img src="{{ user.image }}">
+                        </a>
+                        <span class="user_name"><a class="dark"
+                                                   href="{{ url_for("index.profile") }}">{{ user.username }}</a></span>
+
+                        <div class="space clearfix"></div>
+                        <span class="signature">
+                              {{ user.quote }}
+                            </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content">
+            <div class="panel">
+                <div class="header">
+                    <span class="col_fade">发送站内信</span>
+                </div>
+                <div class="inner">
+                    <form method="post" action="{{ url_for('.add') }}">
+                        <div class="control-group">
+                            <label class="control-label">收信人</label>
+                            <input type="text" name="receiver_id" placeholder="收件人id">
+                            <label class="control-label">标题</label>
+                            <input type="text" name="title" placeholder="标题">
+                            <label class="control-label">内容</label>
+                            <textarea class="input-xlarge" name="content" size="30" type="text"
+                                      placeholder="请输入邮件正文"></textarea> <br>
+                            <button type="submit" class="span-primary submit_btn">发送</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div id="content">
+                <div class="header">
+                    <span class="col_fade">收到的站内信</span>
+                </div>
+                <div class="inner">
+
+
+                    {% for r in received %}
+                        <div class="cell">
+                            <a class="user_avatar pull-left"
+                               href="{{ url_for("index.user_index", name=r.send_user().username) }}">
+                                <img src="{{ r.send_user().image }}">
+                            </a>
+                            <a class="last_time pull-right">
+                                <span class="last_active_time">{{ r.created_time | format_time }}</span>
+                            </a>
+                            <div class="topic_title_wrapper">
+                                &nbsp;&nbsp;&nbsp;&nbsp;<a class="topic_title"
+                                                           href="{{ url_for('.view', id = r.id) }}"> {{ r.title }}</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div id="content">
+                <div class="header">
+                    <span class="col_fade">发送的站内信</span>
+                </div>
+                <div class="inner">
+
+
+                    {% for s in send %}
+                        <div class="cell">
+                            <a class="user_avatar pull-left"
+                               href="{{ url_for("index.user_index",name=s.rec_user().username) }}">
+                                <img src="{{ s.rec_user().image }}">
+                            </a>
+                            <a class="last_time pull-right">
+                                <span class="last_active_time">{{ s.created_time| format_time }}</span>
+                            </a>
+                            <div class="topic_title_wrapper">
+                                &nbsp;&nbsp;&nbsp;&nbsp;<a class="topic_title"
+                                                           href="{{ url_for('.view', id = s.id) }}"> {{ s.title }}</a>
+                            </div>
+                        </div>
+                        
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

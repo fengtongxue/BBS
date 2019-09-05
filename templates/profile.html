@@ -1,0 +1,166 @@
+{% extends "topic/base.html" %}
+{% block title %}论坛主页{% endblock %}
+{% block main %}
+<h1>我的主页</h1>
+<div id="main">
+    <div id="sidebar">
+
+        <div class="panel">
+
+            <div class="header">
+                <span class="col_fade">个人信息</span>
+            </div>
+            <div class="inner">
+                <div class="user_card">
+                    <div>
+                        <a class="user_avatar" href="{{ url_for('index.user_index', name=user.username) }}">
+                            <img src="{{ user.image }}" title="{{ user.username }}">
+                        </a>
+                        <span class="user_name"><a class="dark"
+                                                   href="{{ url_for('index.user_index', name=user.username) }}">{{ user.username }}</a></span>
+
+                        <div class="board clearfix">
+                            <div class="floor">
+                                <span class="big">积分: 0 </span>
+                            </div>
+                        </div>
+                        <div class="space clearfix"></div>
+                        <span class="signature">
+        “
+
+            {{ user.quote }}
+
+        ”
+    </span>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="content">
+        <div class="panel">
+            <div class="header">
+                <ul class="breadcrumb">
+                    <li><a href="{{ url_for('topic.index') }}">主页</a><span class="divider">/</span></li>
+                </ul>
+            </div>
+            <div class="inner userinfo">
+                <div class="user_big_avatar">
+                    <img src={{ user.image }} class="user_avatar"
+                         title="{{ user.username }}">
+                </div>
+                <a class="dark">{{ user.username }}</a>
+
+                <p class="col_fade">{{ user.created_time | format_time}}</p>
+
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="header">
+                <span class="col_fade">最近创建的话题</span>
+            </div>
+
+            {% for t in created %}
+                <div class="cell">
+
+                    <a class="user_avatar pull-left" href="{{ url_for('index.user_index', name=user.username) }}">
+                        <img src="{{ t.user().image }}" title="{{ t.user_id }}">
+                    </a>
+
+                    <span class="reply_count pull-left">
+                    <span class="count_of_replies" title="回复数">
+                      {{ t.replies() | count }}
+                    </span>
+                    <span class="count_seperator">/</span>
+                    <span class="count_of_visits" title="点击数">
+                      {{ t.views }}
+                    </span>
+                  </span>
+                    <a class="last_time pull-right"
+                       href="">
+
+                        <span class="last_active_time">{{ t.created_time | format_time}}</span>
+                    </a>
+
+
+                    <div class="topic_title_wrapper">
+
+
+                        <a class="topic_title" href="{{ url_for('topic.detail', id=t.id) }}" title="{{ t.title }}">
+                            {{ t.title }}
+                        </a>
+                    </div>
+                </div>
+
+            {% endfor %}
+
+
+        </div>
+
+
+        <div class="panel">
+            <div class="header">
+                <span class="col_fade">最近参与的话题</span>
+            </div>
+            <div>
+                {% for r in replied %}
+                    <div class="cell">
+
+                        <a class="user_avatar pull-left" href="{{ url_for('index.user_index', name=user.username) }}">
+                            <img src="{{ r.user().image }}" title="{{ r.user_id }}">
+                        </a>
+
+                        <span class="reply_count pull-left">
+                        <span class="count_of_replies" title="回复数">
+                          {{ r.replies() | count }}
+                        </span>
+                        <span class="count_seperator">/</span>
+                        <span class="count_of_visits" title="点击数">
+                          {{ r.views }}
+                        </span>
+                      </span>
+                        <a class="last_time pull-right"
+                           href="https://cnodejs.org/topic/5cc7a5b105ae566f637fdb7c#5cc7ae24a86ae80ce64b5917">
+                            <img class="user_small_avatar" src="{{ url_for('static', filename='img/fan.jpg') }}">
+                            <span class="last_active_time">{{ r.created_time | format_time}}</span>
+                        </a>
+
+
+                        <div class="topic_title_wrapper">
+
+
+                            <a class="topic_title" href="{{ url_for('topic.detail', id=r.id) }}"
+                               title="{{ r.title }}">
+                                {{ r.title }}
+                            </a>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+    <div>
+        <img src="{{ user.image }}" alt="" style="    width: 300px;
+    height: 270px;">
+        <form method="post" action="{{ url_for('.avatar_add') }}" enctype="multipart/form-data">
+            <input type="file" name="avatar">
+            <button type="submit" class="span-primary submit_btn">上传头像</button>
+        </form>
+    </div>
+{% endblock %}
