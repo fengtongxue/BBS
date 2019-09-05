@@ -44,12 +44,17 @@ def index():
     # t = threading.Thread()
     # t.start()
     # gevent.spawn()
-    time.sleep(0.5)
-    print('time type', time.sleep)
+
+    print('time type')
 
     # print('time type', time.sleep, gevent.sleep)
 
     return render_template("user_login.html")
+
+
+@main.route("/resume")
+def resume():
+    return render_template("resume.html")
 
 
 @main.route("/register_view")

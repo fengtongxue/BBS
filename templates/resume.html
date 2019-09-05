@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://resume.lxxyx.cn/?tdsourcetag=s_pctim_aiomsg -->
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>封帆-Python后端开发工程师</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/css/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/resume.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/iconfont.css">
+    <link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/mdui/0.4.3/css/mdui.min.css">
+</head>
+<body>
+
+<div class="container">
+    <header class="mdui-color-cyan-900">
+        <figure class="qrcode"><img src="/static/images/wechat.jpg"></figure>
+        <section class="title"><h1>封帆</h1>
+            <h2>Python 后端开发工程师</h2></section>
+        <address>
+            <ul class="contacts">
+                <li class="i"><i class="mdui-icon material-icons">&#xe325;</i>13317737854</li>
+                <li><i class="mdui-icon material-icons">&#xe0d0;</i> fengfan620@outlook.com</li>
+
+            </ul>
+        </address>
+    </header>
+    <article class="content">
+        <article class="column-6">
+
+            <section class="experience">
+                <div class="sec-title-wrapper icon-rocket"><h3 class="sec-title"><span
+                        class="sec-zh">个人项目</span><span class="sec-en">Experience</span></h3></div>
+                <div class="timeline-wrapper">
+                    <ul class="sec-content timeline">
+                        <li class="timeline-item icon-bag">
+                            <h3 class="timeline-title"><span class="experience-place">基于 Socket 的 Web Server 和 MVC Web 框架</span>
+                            </h3>
+
+                            <dl class="experience-task ">
+                                <ion-icon name="logo-github" style="width: 20px;
+    height: 20px;"></ion-icon>
+                                源码：<a href="https://github.com/fengtongxue/web-server">https://github.com/fengtongxue/web-server</a>
+                            </dl>
+                            <dl class="experience-task ">
+                                <ion-icon name="star-outline"></ion-icon>
+                                技术栈 <strong>Python + MySQL + HTTP + Socket</strong>
+                            </dl>
+                            <dl class="experience-task ">
+                                 <ion-icon name="star-outline"></ion-icon>
+                                在 Web Sever中
+                                <dd>使用 <strong>Socket</strong> 网络编程，编写一个 Web Server ，<strong>多线程</strong>具有监听发送请求，发送响应的功能，负责转发请求数据到 web
+                                    框架和发送返回的响应至指定客户端
+                                </dd>
+                            </dl>
+                            <dl class="experience-task ">
+
+                                 <ion-icon name="star-outline"></ion-icon>
+                                在 <strong>MVC Web </strong>框架中
+                                <dd><ion-icon name="arrow-dropright"></ion-icon>
+                                    <strong>Model</strong> 部分通过自制基于 <strong>MySQL</strong> 的 <strong>ORM</strong>，抽象封装了增删查改的基类，避免了每次手拼 SQL 语句的麻烦，封装了常用的数据处理函数，用于 <strong>Control</strong> 的数据处理
+
+                                </dd>
+
+                                <dd><ion-icon name="arrow-dropright"></ion-icon>
+                                    <strong>View</strong> 部分使用 <strong>Jinja2</strong> 模板语言，通过模板生成网页 HTML 代码
+                                </dd>
+                                <dd><ion-icon name="arrow-dropright"></ion-icon>
+                                    <strong>Control</strong> 部分自制的 Web 框架实现，实现了请求类，用于解析请求，
+                                    实现了<strong>注册路由和路由函数的映射</strong>，HTTP 响应组装接口，
+                                    HTML模板渲染，错误页面和重定向等功能
+                                </dd>
+                            </dl>
+                            <dl class="experience-task ">
+                                <ion-icon name="arrow-dropright"></ion-icon>
+                                整个框架实现了用户注册，登录功能，密码 <strong>Hash </strong>加盐保护，微博留言与评论的增删查改
+                            </dl>
+
+
+                        </li>
+                        <li class="timeline-item icon-bag">
+                            <h3 class="timeline-title"><span class="experience-place">基于 Flask 的个人论坛</span>
+
+                            </h3>
+                            <dl class="experience-task ">
+                                <ion-icon name="logo-github" style="width: 20px;
+    height: 20px;"></ion-icon>
+                                源码: <a href="https://github.com/fengtongxue/BBS">https://github.com/fengtongxue/BBS</a>
+                                <br>测试账号：taylor  密码：123 (默认值自动填充)
+                            </dl>
+                            <dl class="experience-task ">
+                                部署地址：
+                            </dl>
+                            <dl class="experience-task ">
+                                <ion-icon name="star-outline"></ion-icon>
+                                技术栈 <strong>Ubuntu + Nginx + Gunicorn + Flask + MySQL + Jinja2 + Redis + Celery</strong>
+                            </dl>
+                            <dl class="experience-task ">
+                                 <ion-icon name="star-outline"></ion-icon>
+                                功能
+                                <dd><ion-icon name="arrow-dropright"></ion-icon>实现用户管理，话题浏览和发表，评论回复，用户主页，个人信息维护，站内信功能
+                                </dd>
+                                <dd><ion-icon name="arrow-dropright"></ion-icon>话题支持markdown，语法高亮，私信，@ 提醒，<strong>密码找回功能</strong>
+                                </dd>
+                            </dl>
+                            <dl class="experience-task ">
+                                 <ion-icon name="star-outline"></ion-icon>
+                                亮点
+                                <dd><ion-icon name="arrow-dropright"></ion-icon>
+
+                                    使用了基于 <strong>Celery</strong> <strong>消息队列</strong>的邮件发送功能,保证准确性和可靠性
+                                </dd>
+                                <dd><ion-icon name="arrow-dropright"></ion-icon>
+                                    项目使用云服务器硬件防火墙，<strong>Ubuntu</strong> 内置软件防火墙，<strong>Ubuntu</strong> 内置软件防火墙、<strong>Nginx</strong> 反向代理、密码加盐、<strong>XSRF token</strong> 防御等多级手段提高安全性，保障用户数据
+                                </dd>
+                                <dd><ion-icon name="arrow-dropright"></ion-icon>
+                                   单机 <strong>负载均衡</strong> <strong>Gunicorn</strong> 工作进程实现，提升<strong>并发</strong>性能
+                                </dd>
+
+                                <dd><ion-icon name="arrow-dropright"></ion-icon>
+                                    <strong>Gunicorn</strong> 搭配 <strong>Gevent</strong> 协程，实现并发处理请求，减少因多线程抢占式调用带来的<strong>上下文切换</strong>
+                                </dd>
+                                <dd><ion-icon name="arrow-dropright"></ion-icon>
+                                    自制 <strong>session</strong>，解决 <strong>Flask</strong> 内置 <strong>session </strong>不安全问题
+                                </dd>
+                                <dd><ion-icon name="arrow-dropright"></ion-icon>
+                                    使用 <strong>Redis</strong> 实现登陆 <strong>session</strong> 和页面 <strong>token </strong>在多进程下的<strong>数据共享</strong>，利用 <strong>Redis</strong> 缓存 需要多次访问计算的数据
+                                </dd>
+                                <dd><ion-icon name="arrow-dropright"></ion-icon>
+                                    通过 <strong>MySQL</strong> 进行数据存储，使用 <strong>SQLAlchemy</strong> 实现了 ORM，部分 n +1 性能问题使用了 <strong>SQLAlchemy </strong>原生 <strong>API</strong>
+                                </dd>
+                                <dd><ion-icon name="arrow-dropright"></ion-icon>
+                                    编写 <strong>BASH</strong> 自动部署脚本，实现在服务器一键部署
+                                </dd>
+                            </dl>
+
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="education">
+                <div class="sec-title-wrapper icon-book"><h3 class="sec-title"><span class="sec-zh">教育经历</span><span
+                        class="sec-en">Education</span></h3></div>
+                <div class="timeline-wrapper">
+                    <ul class="sec-content timeline">
+                        <li class="timeline-item icon-flags">
+                            <h3 class="timeline-title">
+                                <time class="education-time">2015-2019</time>
+                            </h3>
+                            <dl class="education-content">
+                                <dt class="education-name">桂林电子科技大学信息科技学院</dt>
+                                <dd class="education-name "> <ion-icon name="star-outline"></ion-icon>软件工程（本科）</dd>
+                                <dd class="education-name "> <ion-icon name="star-outline"></ion-icon>大学英语四级</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+        </article>
+        <article class="column-6 column">
+            <section class="skills">
+                <div class="sec-title-wrapper icon-wrench"><h3 class="sec-title"><span class="sec-zh">技能</span><span
+                        class="sec-en">Skills</span></h3></div>
+                <div class="timeline-wrapper">
+                    <ul class="sec-content timeline">
+                        <li class="timeline-item icon-flags"><h3 class="timeline-title"><span
+                                class="skill">Python</span>
+                        </h3>
+
+
+                            <dl class="skill-description "> <ion-icon name="star-outline"></ion-icon>
+                                熟练掌握 <strong>Python</strong>，熟悉面向对象编程，熟悉类继承，封装，多态，类方法等使用
+                            </dl>
+                            <dl class="skill-description "> <ion-icon name="star-outline"></ion-icon>
+                                熟悉 <strong>装饰器 迭代器 生成器 匿名函数 自省</strong> Python 高级特性
+                            </dl>
+                            <dl class="skill-description "> <ion-icon name="star-outline"></ion-icon>
+                                理解 Python 中的<strong>协程 线程 全局解释器锁</strong>（<strong>GIL Global Interpreter Lock</strong>），<strong>垃圾回收</strong>等概念和原理
+                            </dl>
+                            <dl class="skill-description "> <ion-icon name="star-outline"></ion-icon>
+                                熟悉Python 中的常见数据结构 （<strong>List Set Dict </strong>）
+                            </dl>
+                            <dl class="skill-description "> <ion-icon name="star-outline"></ion-icon>
+                                实现过常见数据结构，<strong>队列 栈 链表</strong>，<strong>Hashtable</strong> 及其常用操作，能衡量<strong>算法复杂度</strong>
+                            </dl>
+
+
+                        </li>
+                        <li class="timeline-item icon-cloud"><h3 class="timeline-title"><span class="skill">Web后端</span>
+                        </h3>
+
+                            <dl class="skill-description "> <ion-icon name="star-outline"></ion-icon><strong>Web 框架</strong>
+                                <dd><ion-icon name="arrow-dropright"></ion-icon>熟练掌握基于 <strong>Flask </strong> Web 开发，理解 <strong>RESTful </strong>设计理念</dd>
+                                <dd><ion-icon name="arrow-dropright"></ion-icon>熟悉 <strong>HTTP </strong>协议，<strong>网络编程</strong> <strong>Socket </strong>的 Web Server</dd>
+                                <dd><ion-icon name="arrow-dropright"></ion-icon>理解模型-视图-控制器（<strong>MVC Model-View-Controller</strong>）模式，建立了 MVC 架构的网站</dd>
+                                <dd> <ion-icon name="arrow-dropright"></ion-icon>熟练使用 Python 标准库，熟悉 <strong>SQLAlchemy</strong>，<strong>Celery </strong>等第三方标准库</dd>
+                            </dl>
+                              <dl class="skill-description "> <ion-icon name="star-outline"></ion-icon>
+                                <strong>数据库</strong>
+                                <dd><ion-icon name="arrow-dropright"></ion-icon>熟练掌握 <strong>MySQL</strong>
+                                    数据库，了解数据库的事务<strong>原子性（Atomicity） 一致性（Consistency） 隔离性（Isolation） 持久性（Durability）</strong>特性
+                                </dd>
+                                  <dd><ion-icon name="arrow-dropright"></ion-icon>实现过基于 <strong>MySQL </strong>（<strong>ORM Object Relational Mapping</strong>）</dd>
+                                  <dd><ion-icon name="arrow-dropright"></ion-icon>了解 ORM 的性能局限性， 掌握 ORM 生成 SQL 语句的性能问题，能针对 ORM 进行<strong>性能调优</strong></dd>
+                            </dl>
+                            <dl class="skill-description "> <ion-icon name="star-outline"></ion-icon>
+                                Web 安全
+                                <dd><ion-icon name="arrow-dropright"></ion-icon>模拟过 <strong>SQL 注入</strong>，跨站请求伪造（<strong>CSRF Cross-site request forgery</strong>），跨站脚本攻击(<strong>XSS Cross Site
+                                    Scripting</strong>)，路径遍历攻击，并实现具体的防御方案
+                                </dd>
+                                <dd> <ion-icon name="arrow-dropright"></ion-icon>理解密码摘要算法（<strong>MD5/SHA-1/SHA-256</strong>），<strong>密码加盐 对称加密和非对称加密</strong>原理，<strong>HTTPS 证书体系</strong>等安全技术原理</dd>
+                            </dl>
+
+                            <dl class="skill-description "> <ion-icon name="star-outline"></ion-icon>
+                                部署
+                                <dd><ion-icon name="arrow-dropright"></ion-icon>熟悉 <strong>Linux</strong> 开发，熟练使用 <strong>Ubuntu </strong>操作和开发环境的搭建</dd>
+                                <dd><ion-icon name="arrow-dropright"></ion-icon>掌握利用 <strong>Redis</strong> 缓存优化，多进程间的数据共享可再缓存中进行，提高进程间数据交换效率</dd>
+                                <dd><ion-icon name="arrow-dropright"></ion-icon>熟悉 <strong>Nginx </strong>反向代理，<strong>Gunicorn </strong>配置多个 <strong>Worker</strong>，<strong>Gevent </strong>协程</dd>
+                                <dd><ion-icon name="arrow-dropright"></ion-icon>能使用 <strong>ssh scp </strong>命令，密钥登陆，掌握 <strong>Shell/Bash </strong>脚本，能编写一键部署脚本</dd>
+                                <dd><ion-icon name="arrow-dropright"></ion-icon>能利用性能分析工具 <strong>cProfile</strong> 生成函数调用和性能占用分布图，找出性能瓶颈，进行调优</dd>
+
+                                <dd><ion-icon name="arrow-dropright"></ion-icon>熟练使用 <strong>Git</strong> 版本管理 </dd>
+                            </dl>
+
+
+                        </li>
+                        <li class="timeline-item icon-gears"><h3 class="timeline-title"><span class="skill">Web前端</span>
+                        </h3>
+                            <dl class="skill-content">
+                                <dd class="skill-description "> <ion-icon name="star-outline"></ion-icon>熟练使用 <strong>HTML CSS JavaScript</strong>
+                                </dd>
+                                <dd class="skill-description "> <ion-icon name="star-outline"></ion-icon> 熟悉 盒 子模型, <strong>Ajax</strong>,
+                                    <strong>Bootstrap</strong>, 能独立布局, 模仿样式, 完全超出后端开发需要
+                                </dd>
+                            </dl>
+                            <dl class="skill-content">
+                                </dd>
+                            </dl>
+                        </li>
+<!--                        <li class="timeline-item icon-gears"><h3 class="timeline-title"><span class="skill">爬虫</span>-->
+<!--                        </h3>-->
+<!--                            <dl class="skill-content">-->
+<!--                                <dd class="skill-description "> <ion-icon name="star-outline"></ion-icon>-->
+<!--                                    掌握多页爬取，页面缓存，图片下载，伪装登录，清洗数据技术-->
+<!--                                </dd>-->
+<!--                                <dd class="skill-description "> <ion-icon name="star-outline"></ion-icon>-->
+<!--                                    了解 <strong>Selenium</strong> 配合 <strong>Chrome</strong> 无头模式模拟操作抓取动态页面-->
+<!--                                </dd>-->
+<!--                            </dl>-->
+<!--                            <dl class="skill-content">-->
+<!--                                </dd>-->
+<!--                            </dl>-->
+<!--                        </li>-->
+                    </ul>
+                </div>
+            </section>
+        </article>
+    </article>
+</div>
+<footer></footer>
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</body>
+</html>
