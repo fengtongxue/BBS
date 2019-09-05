@@ -24,4 +24,12 @@
     
 
 # 演示
-部署： ![图片](https://raw.githubusercontent.com/fengtongxue/learngit/master/deploy.gif)
+- 部署： ![图片](https://raw.githubusercontent.com/fengtongxue/learngit/master/deploy.gif)
+
+- 站内信： ![图片](https://raw.githubusercontent.com/fengtongxue/learngit/master/send.gif)
+
+- 重置密码： ![图片](https://raw.githubusercontent.com/fengtongxue/learngit/master/changepwd.gif)
+
+- 改签名头像：![图片](https://raw.githubusercontent.com/fengtongxue/learngit/master/changequote.gif)
+
+- markdown： ![图片](https://raw.githubusercontent.com/fengtongxue/learngit/master/topic.gif)
