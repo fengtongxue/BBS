@@ -23,4 +23,5 @@
     - 邮件通知@ 用户
     
 
-#演示
+# 演示
+部署： ![图片](https://raw.githubusercontent.com/fengtongxue/learngit/master/deploy.gif)
