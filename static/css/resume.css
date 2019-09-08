@@ -137,10 +137,13 @@ section {
   dd {
     line-height: 1.2;
     font-size: 14; } }
-
+  dl {
+    margin: 6px 0; }
 dd {
-  line-height: 1.42;
-    padding: 4px;}
+  line-height: 1.22;
+    padding: 1px;
+  margin-left: 13px;
+}
 
 @media (min-width: 1024px) {
   .column-6 {
@@ -162,7 +165,7 @@ dd {
 
 .content {
   overflow: hidden;
-  padding: 30px 45px;
+  padding: 0px 0px;
   background: #fff; }
   @media (max-width: 414px) {
     .content {
@@ -225,7 +228,7 @@ dd {
   margin: 0; }
 
 .education .education-name {
-  font-size: 18px;
+  font-size: 17px;
   margin: 6px 0 5px 26px; }
 
 .education dd {
@@ -287,7 +290,7 @@ dd {
     margin: 6px 0 5px 26px; }
   .experience .experience-task {
     font-size: 15px;
-    margin-left: 27px;
+    margin-left: 7px;
     display: -ms-flexbox;
     -ms-flex-align: center;
     align-items: center; }
@@ -322,7 +325,7 @@ dd {
 
 .skills .skill-description {
   font-size: 15px;
-  margin-left: 23px; }
+  margin-left: 7px; }
 
 footer {
   margin: 15px 6px; }
